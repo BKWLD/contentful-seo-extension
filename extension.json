@@ -1,5 +1,6 @@
 {
   "id": "sep",
   "name": "SEO Fields",
-  "srcdoc": "./index.html"
+  "srcdoc": "./index.html",
+  "fieldTypes": ["Object"]
 }
