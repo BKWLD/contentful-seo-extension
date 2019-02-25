@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Contentful SEO Extension</title>
+		<link rel="stylesheet" href="//unpkg.com/@contentful/forma-36-react-components@2.0.0/dist/styles.css" />
+		<script src="//unpkg.com/contentful-ui-extensions-sdk@3"></script>
+		<script src="//unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
+		<script src="//unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+		<script src="//unpkg.com/@contentful/forma-36-react-components@2/dist/umd/forma-36-react-components.production.min.js"></script>
+		
+		<script type="text/javascript">
+			var Button = Forma36.Button;
+			var h = React.createElement;
+
+			window.contentfulExtension.init(function(api) {
+
+			  var onClickHandler = function() {
+			    console.log('You clicked on Forma36 button');
+			  };
+
+			  ReactDOM.render(h(Button, { 
+					buttonType: "primary", onClick: onClickHandler 
+				}, 'Click on me'), document.getElementById("root"));
+			});
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
