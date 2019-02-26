@@ -4,10 +4,11 @@
 		<meta charset="utf-8">
 		<title>Contentful SEO Extension</title>
 		<link rel="stylesheet" href="//unpkg.com/@contentful/forma-36-react-components@2.0.0/dist/styles.css" />
-		<script src="//unpkg.com/contentful-ui-extensions-sdk@3"></script>
-		<script src="//unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
-		<script src="//unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
-		<script src="//unpkg.com/@contentful/forma-36-react-components@2/dist/umd/forma-36-react-components.production.min.js"></script>
+    <script src="//unpkg.com/contentful-ui-extensions-sdk@3"></script>
+    <script src="//unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
+    <script src="//unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+    <script src="//unpkg.com/create-react-class@15.6.3/create-react-class.min.js"></script>
+    <script src="//unpkg.com/@contentful/forma-36-react-components@2/dist/umd/forma-36-react-components.production.min.js"></script>
 	</head>
 	<body>
 		<div id="root"></div>
@@ -63,8 +64,19 @@
 								labelText: "Meta Description",
 								helpText: "Get dummy user data from an external API",
 								// onChange: this.onChange,
-								value: this.state.value.metaDescription
-							})
+								value: this.state.value
+							}
+						),
+						h('br'),
+						h(
+							TextField,
+							{
+								labelText: "OG: Description",
+								textarea: true,
+								helpText: "Get dummy user data from an external API",
+								// onChange: this.onChange,
+								value: this.state.value
+							}
 						)
 					);
 				}
@@ -72,6 +84,7 @@
 
 			window.contentfulExtension.init(function(api) {
 				ReactDOM.render(h(App, { api: api }), document.getElementById("root"));
+				api.window.startAutoResizer()
 			});
 		</script>
 	</body>
